@@ -9,33 +9,40 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "cursos")
 public class Curso {
 	@Id
 	@Column(name = "id_curso")
+	@JsonProperty(value = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private String id;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_instructor")
+	@JsonProperty(value = "instructor")
 	private Instructor instructor;
 	
 	@Column(name = "nom_curso")
+	@JsonProperty(value = "nombre")
 	private String nombre;
 	
 	@Column(name = "contenido")
+	@JsonProperty(value = "contenido")
 	private String contenido;
 	
 	@Column(name = "duracion")
+	@JsonProperty(value = "duracion")
 	private Integer duracion;
 	
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
