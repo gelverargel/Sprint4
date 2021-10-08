@@ -10,7 +10,7 @@ import co.unab.edu.repository.CursoRepository;
 @Service
 public class CursoServiceImpl implements CursoService{
 	@Autowired
-	private CursoRepository cursoRepository; 
+	private CursoRepository cursoRepository;
 	
 	@Override
 	public List<Curso> findAll() {

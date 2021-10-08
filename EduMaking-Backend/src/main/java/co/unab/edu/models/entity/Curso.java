@@ -17,7 +17,7 @@ public class Curso {
 	@Id
 	@Column(name = "id_curso")
 	@JsonProperty(value = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
 	
 	@ManyToOne

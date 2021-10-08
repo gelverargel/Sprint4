@@ -2,7 +2,6 @@ package co.unab.edu.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.unab.edu.models.entity.Profesion;
 import co.unab.edu.models.service.ProfesionService;
 
@@ -33,17 +31,17 @@ public class ProfesionController {
 	}
 	
 	@PostMapping
-	public Profesion guardar(@RequestBody Profesion profesion) {
-		return profesionService.save(profesion);
+	public Profesion guardar(@RequestBody Profesion inscripcion) {
+		return profesionService.save(inscripcion);
 	}
 	
 	@PutMapping("/actualizar/{id}")
-	public Profesion actualizar(@RequestBody Profesion profesion, @PathVariable Integer id) {
-		Profesion ProfesionBD = profesionService.findById(id).get();
-		ProfesionBD.setId(profesion.getId());
-				
-		profesionService.save(ProfesionBD);
-		return profesion;
+	public Profesion actualizar(@RequestBody Profesion prof, @PathVariable Integer id) {
+		Profesion prof_act = profesionService.findById(id).get();
+		prof_act.setNombre(prof.getNombre());
+		
+		profesionService.save(prof_act);
+		return prof;
 	}
 	
 	@DeleteMapping("{id}")

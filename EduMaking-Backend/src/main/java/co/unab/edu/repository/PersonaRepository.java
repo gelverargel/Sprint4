@@ -9,4 +9,3 @@ import co.unab.edu.models.entity.Persona;
 public interface PersonaRepository extends JpaRepository<Persona, Integer> {
 
 }
-

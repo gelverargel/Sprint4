@@ -11,46 +11,45 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import co.unab.edu.models.entity.Curso;
-import co.unab.edu.models.service.CursoService;
+import co.unab.edu.models.entity.Pais;
+import co.unab.edu.models.service.PaisService;
 
 @RestController
-@RequestMapping("/api/cursos")
-public class CursoController {
+@RequestMapping("/api/paises")
+public class PaisController {
 	@Autowired
-	private CursoService cursoService;
+	private PaisService paisService;
 	
 	@GetMapping("{id}")
-	public Optional<Curso> buscarPorId(@PathVariable String id) {
-		return cursoService.findById(id);
+	public Optional<Pais> buscarPorId(@PathVariable String id) {
+		return paisService.findById(id);
 	}
 	
 	@GetMapping("/listar")
-	public List<Curso> listar() {
-		return  cursoService.findAll();
+	public List<Pais> listar() {
+		return  paisService.findAll();
 	}
 	
 	@PostMapping
-	public Curso guardar(@RequestBody Curso curso) {
-		System.out.println("Curso: "+curso);
-		return cursoService.save(curso);
+	public Pais guardar(@RequestBody Pais curso) {
+		System.out.println(curso);
+		return paisService.save(curso);
 	}
 	
 	@PutMapping("/actualizar/{id}")
-	public Curso actualizar(@RequestBody Curso curso, @PathVariable String id) {
-		Curso curso_act = cursoService.findById(id).get();
-		curso_act.setInstructor(curso.getInstructor());
-		curso_act.setNombre(curso.getNombre());
-		curso_act.setContenido(curso.getContenido());
-		curso_act.setDuracion(curso.getDuracion());
+	public Pais actualizar(@RequestBody Pais pais, @PathVariable String id) {
+		Pais pais_act = paisService.findById(id).get();
+		pais_act.setNombre(pais.getNombre());
+		pais_act.setContinente(pais.getContinente());
+		pais_act.setCodigo(pais.getCodigo());
 		
-		cursoService.save(curso_act);
-		return curso;
+		paisService.save(pais_act);
+		return pais;
 	}
 	
 	// Si se va a quitar el eliminar, eliminar este método o comentarlo
 	@DeleteMapping("{id}")
 	public void eliminar(@PathVariable String id) {
-		cursoService.deleteById(id);
+		paisService.deleteById(id);
 	}
 }
