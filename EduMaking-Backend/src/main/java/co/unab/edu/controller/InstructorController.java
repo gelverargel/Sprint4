@@ -17,6 +17,7 @@ import co.unab.edu.models.service.InstructorService;
 @RestController
 @RequestMapping("/api/instructores")
 public class InstructorController {
+	
 	@Autowired
 	private InstructorService instructorService;
 	
@@ -26,33 +27,32 @@ public class InstructorController {
 	}
 	
 	@GetMapping("/listar")
-	public List<Instructor> listar() {
-		return  instructorService.findAll();
+	public List<Instructor> listar(){
+		return instructorService.findAll();
 	}
 	
 	@PostMapping
-	public Instructor guardar(@RequestBody Instructor ins) {
-		System.out.println(ins);
-		return instructorService.save(ins);
+	public Instructor guardar(@RequestBody Instructor instructor) {
+		return instructorService.save(instructor);
 	}
 	
 	@PutMapping("/actualizar/{id}")
-	public Instructor actualizar(@RequestBody Instructor ins, @PathVariable Integer id) {
-		Instructor ins_act = instructorService.findById(id).get();
-		ins_act.setNombre(ins.getNombre());
-		ins_act.setTelef(ins.getTelef());
-		ins_act.setEmail(ins.getEmail());
-		ins_act.setProfesion(ins.getProfesion());
-		ins_act.setfInicioExp(ins.getfInicioExp());
-		ins_act.setPais(ins.getPais());
-		ins_act.setCiudad(ins.getCiudad());
-		ins_act.setEstado(ins.getEstado());
+	public Instructor actualizar(@RequestBody Instructor instructor, @PathVariable Integer id) {
+		Instructor InstrBD = instructorService.findById(id).get();
+		InstrBD.setId(instructor.getId());
+		InstrBD.setNombre(instructor.getNombre());
+		InstrBD.setTelef(instructor.getTelef());
+		InstrBD.setEmail(instructor.getEmail());
+		InstrBD.setProfesion(instructor.getProfesion());
+		InstrBD.setfInicioExp(instructor.getfInicioExp());
+		InstrBD.setPais(instructor.getPais());
+		InstrBD.setCiudad(instructor.getCiudad());
+		InstrBD.setEstado(instructor.getEstado());
 		
-		instructorService.save(ins_act);
-		return ins;
+		instructorService.save(InstrBD);
+		return instructor;
 	}
 	
-	// Si se va a quitar el eliminar, eliminar este método o comentarlo
 	@DeleteMapping("{id}")
 	public void eliminar(@PathVariable Integer id) {
 		instructorService.deleteById(id);
