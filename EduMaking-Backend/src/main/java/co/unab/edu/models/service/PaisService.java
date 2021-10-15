@@ -9,7 +9,7 @@ public interface PaisService {
 	
 	public Optional<Pais>findById(String id);
 	
-	public Pais save(Pais inscripcion);
+	public Pais save(Pais pais);
 	
 	public void deleteById(String id);
 }

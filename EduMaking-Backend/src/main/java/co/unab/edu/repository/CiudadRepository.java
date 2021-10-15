@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import co.unab.edu.models.entity.Ciudad;
 
 @Repository
-public interface CiudadRepository extends JpaRepository<Ciudad, Integer>{
-	
+public interface CiudadRepository extends JpaRepository<Ciudad, Integer> {
+
 }

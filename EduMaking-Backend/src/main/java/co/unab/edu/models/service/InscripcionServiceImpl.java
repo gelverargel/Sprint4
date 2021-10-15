@@ -30,5 +30,5 @@ public class InscripcionServiceImpl implements InscripcionService {
 	@Override
 	public void deleteById(Integer id) {
 		inscripcionRepository.deleteById(id);
-	}	
+	}
 }

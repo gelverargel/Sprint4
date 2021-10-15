@@ -9,7 +9,6 @@ import co.unab.edu.repository.InstructorRepository;
 
 @Service
 public class InstructorServiceImpl implements InstructorService {
-
 	@Autowired
 	private InstructorRepository instructorRepository;
 	
@@ -30,6 +29,6 @@ public class InstructorServiceImpl implements InstructorService {
 
 	@Override
 	public void deleteById(Integer id) {
-		instructorRepository.deleteById(id);	
+		instructorRepository.deleteById(id);
 	}
 }

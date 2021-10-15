@@ -6,5 +6,5 @@ import co.unab.edu.models.entity.Inscripcion;
 
 @Repository
 public interface InscripcionRepository extends JpaRepository<Inscripcion, Integer>{
-	
+
 }

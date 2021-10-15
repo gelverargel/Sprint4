@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import co.unab.edu.models.entity.Pais;
 
 @Repository
-public interface PaisRepository extends JpaRepository<Pais, String>{
-	
+public interface PaisRepository extends JpaRepository<Pais, String> {
+
 }

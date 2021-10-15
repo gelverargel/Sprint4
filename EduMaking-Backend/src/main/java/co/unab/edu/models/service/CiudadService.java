@@ -9,7 +9,7 @@ public interface CiudadService {
 	
 	public Optional<Ciudad>findById(Integer id);
 	
-	public Ciudad save(Ciudad inscripcion);
+	public Ciudad save(Ciudad ciudad);
 	
 	public void deleteById(Integer id);
 }

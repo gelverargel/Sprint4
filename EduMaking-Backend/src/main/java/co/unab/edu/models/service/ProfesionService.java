@@ -9,7 +9,7 @@ public interface ProfesionService {
 	
 	public Optional<Profesion>findById(Integer id);
 	
-	public Profesion save(Profesion inscripcion);
+	public Profesion save(Profesion profesion);
 	
 	public void deleteById(Integer id);
 }

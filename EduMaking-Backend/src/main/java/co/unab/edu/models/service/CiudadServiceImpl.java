@@ -8,7 +8,7 @@ import co.unab.edu.models.entity.Ciudad;
 import co.unab.edu.repository.CiudadRepository;
 
 @Service
-public class CiudadServiceImpl implements CiudadService {
+public class CiudadServiceImpl implements CiudadService  {
 	@Autowired
 	private CiudadRepository ciudadRepository;
 	
@@ -23,12 +23,12 @@ public class CiudadServiceImpl implements CiudadService {
 	}
 
 	@Override
-	public Ciudad save(Ciudad inscripcion) {
-		return ciudadRepository.save(inscripcion);
+	public Ciudad save(Ciudad ciudad) {
+		return ciudadRepository.save(ciudad);
 	}
 
 	@Override
 	public void deleteById(Integer id) {
 		ciudadRepository.deleteById(id);
-	}	
+	}
 }

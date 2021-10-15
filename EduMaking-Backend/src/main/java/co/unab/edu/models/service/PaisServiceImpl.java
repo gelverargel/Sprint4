@@ -23,8 +23,8 @@ public class PaisServiceImpl implements PaisService {
 	}
 
 	@Override
-	public Pais save(Pais inscripcion) {
-		return paisRepository.save(inscripcion);
+	public Pais save(Pais pais) {
+		return paisRepository.save(pais);
 	}
 
 	@Override

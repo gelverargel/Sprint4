@@ -2,10 +2,8 @@ package co.unab.edu.models.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import co.unab.edu.models.entity.Persona;
 import co.unab.edu.repository.PersonaRepository;
 
@@ -32,5 +30,5 @@ public class PersonaServiceImpl implements PersonaService {
 	@Override
 	public void deleteById(Integer id) {
 		personaRepository.deleteById(id);
-	}	
+	}
 }

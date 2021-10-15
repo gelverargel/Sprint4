@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import co.unab.edu.models.entity.Curso;
 
 @Repository
-public interface CursoRepository extends JpaRepository<Curso, String>{
-	
+public interface CursoRepository extends JpaRepository<Curso, String> {
+
 }

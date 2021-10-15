@@ -23,12 +23,13 @@ public class ProfesionServiceImpl implements ProfesionService {
 	}
 
 	@Override
-	public Profesion save(Profesion inscripcion) {
-		return profesionRepository.save(inscripcion);
+	public Profesion save(Profesion profesion) {
+		return profesionRepository.save(profesion);
 	}
 
 	@Override
 	public void deleteById(Integer id) {
 		profesionRepository.deleteById(id);
-	}	
+	}
+
 }

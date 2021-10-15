@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import co.unab.edu.models.entity.Profesion;
 
 @Repository
-public interface ProfesionRepository extends JpaRepository<Profesion, Integer>{
-	
+public interface ProfesionRepository extends JpaRepository<Profesion, Integer> {
+
 }

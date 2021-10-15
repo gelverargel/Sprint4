@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 import co.unab.edu.models.entity.Curso;
 import co.unab.edu.repository.CursoRepository;
 
+
 @Service
-public class CursoServiceImpl implements CursoService{
+public class CursoServiceImpl implements CursoService {
 	@Autowired
 	private CursoRepository cursoRepository;
 	
